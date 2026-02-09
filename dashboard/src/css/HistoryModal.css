@@ -1,0 +1,59 @@
+/* .history-modal-content extends generic .modal-content */
+.history-modal-content {
+    width: 90%;
+    max-width: 900px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.history-table-container {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.history-table th,
+.history-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.history-table th {
+    background-color: #f8f9fa;
+    position: sticky;
+    top: 0;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.user-badge {
+    background-color: #e8f4fd;
+    color: #2980b9;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.time-col {
+    white-space: nowrap;
+    color: #666;
+    font-size: 0.9rem;
+    width: 180px;
+}
+
+.user-col {
+    width: 150px;
+}
+
+.subject-col {
+    color: #666;
+    font-size: 0.9rem;
+}

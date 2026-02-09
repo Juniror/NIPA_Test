@@ -1,0 +1,95 @@
+/* navbar area */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 5px 60px;
+    background-color: #f8ecf8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: gray;
+}
+
+.navbar a:nth-child(3) {
+    color: black;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    justify-content: space-between;
+
+}
+
+.menu li:nth-child(2),
+.menu li:nth-child(3) {
+    color: gray;
+}
+
+.menu img {
+    width: 100px;
+    padding: 7px 0 0 0;
+}
+
+/* button */
+.navbutton button {
+    background-color: #8c7bc6;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 24px;
+    padding: 10px 20px;
+    margin: 0 50px 0 0;
+}
+
+.navbutton button:hover {
+    background-color: #8c7bc6;
+    color: #d1d5db;
+    cursor: pointer;
+}
+
+/* scroll */
+.navbar.scrolled {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(248, 236, 248, 0.95);
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 5px 20px;
+    }
+
+    .menu {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .menu img {
+        width: 80px;
+    }
+
+    .navbutton button {
+        padding: 8px 15px;
+        font-size: 12px;
+        margin: 0;
+    }
+
+    /* For now, just ensuring it fits nicely */
+}

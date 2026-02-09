@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # backend:
+  #   image: node:18-alpine
+  #   working_dir: /app
+  #   volumes:
+  #     - ./backend:/app
+  #     - /app/node_modules # Prevent host node_modules from conflicting
+  #   ports:
+  #     - "${PORT}:${PORT}"
+  #   env_file:
+  #     - ./.env
+  #   command: sh -c "npm install && npm start"
+  #   depends_on:
+  #     - db
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

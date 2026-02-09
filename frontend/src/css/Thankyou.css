@@ -1,0 +1,84 @@
+/* thankyou area */
+.thankyou-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Outfit', sans-serif;
+}
+
+.thankyou-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.check-circle {
+    margin-top: 50px;
+    background-color: #5b73b5;
+    color: #333;
+    font-size: 60px;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thankyou-title {
+    font-weight: 300;
+    font-size: 48px;
+    color: #333;
+    margin: 20px 0;
+}
+
+.thankyou-message {
+    font-size: 18px;
+    color: #555;
+    border-top: 1px solid #ccc;
+    padding-top: 25px;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.thankyou-message strong {
+    color: #333;
+    font-weight: 700;
+}
+
+.thankyou-message p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.thankyou-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 50px;
+    border-left: 1px solid #eee;
+}
+
+.company-title {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.thankyou-right .icon-text {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.thankyou-right .icon-text a {
+    text-decoration: none;
+}
