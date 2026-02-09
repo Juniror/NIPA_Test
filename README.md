@@ -26,9 +26,9 @@
 ### 1. Setup 
 
 เปลี่ยนชื่อจาก .env.example เป็น .env
-./backend/.env.example -> ./backend/.env
-./frontend/.env.example -> ./frontend/.env
-./dashboard/.env.example -> ./dashboard/.env
+- ./backend/.env.example → ./backend/.env
+- ./frontend/.env.example → ./frontend/.env
+- ./dashboard/.env.example → ./dashboard/.env
 
 ### 2. Run Everything
 
