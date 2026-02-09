@@ -15,9 +15,6 @@ const login = async (req, res) => {
 
         if (rows.length > 0) {
             const user = rows[0];
-            // In a real app, do NOT send the password back.
-            // Also, consider using JWT tokens for session management.
-            // For now, based on requirements, we just return success/user info.
             res.json({
                 success: true,
                 message: 'Login successful',

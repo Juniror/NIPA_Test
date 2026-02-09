@@ -1,23 +1,5 @@
 # API Documentation
 
-Backend สร้างโดยใช้ framework express
-
-## Setup & Running
-
-ก่อนที่จะรันจำเป็นต้องรัน database ก่อน 
-หากเกิดปัญหาใดๆรันไม่ได้ ให้เปิด docker desktop ก่อน
-```bash
-    docker compose up -d
-```
-แก้ไขไฟล์ .env.example เป็น .env (default port = 3000)
-
-จากนั้นรันคำสั่ง
-```bash
-    npm install
-    npm start
-```
-เมื่อรันจะอยู่ที่ localhost:3000
-
 ## API Endpoints
 
 ### Authentication

@@ -14,12 +14,7 @@ function App() {
     navigate('/dashboard');
   };
 
-  const ProtectedRoute = ({ children }) => {
-    if (!user) {
-      return <Navigate to="/login" replace state={{ from: location }} />;
-    }
-    return children;
-  };
+
 
   return (
     <Routes>
@@ -27,12 +22,7 @@ function App() {
         user ? <Navigate to="/dashboard" replace /> : <LoginPage onLogin={handleLogin} />
       } />
 
-      <Route path="/dashboard" element={
-        <ProtectedRoute>
-          <TicketList user={user} />
-        </ProtectedRoute>
-      } />
-
+      <Route path="/dashboard" element={<TicketList user={user} />} />
 
       <Route path="*" element={<Navigate to={user ? "/dashboard" : "/login"} replace />} />
     </Routes>

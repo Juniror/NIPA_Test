@@ -15,7 +15,6 @@ function HistoryModal({ onClose }) {
         try {
             const response = await fetch(`${import.meta.env.VITE_API_URL}/tickets/history`);
             const data = await response.json();
-            console.log(data);
             setHistory(data);
         } catch (error) {
             console.error('Error fetching history:', error);

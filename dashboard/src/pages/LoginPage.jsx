@@ -34,7 +34,7 @@ function LoginPage({ onLogin }) {
             }
         } catch (err) {
             console.error('Login error:', err);
-            setError('Network error. Please try again.');
+            setError('Please try again.');
         } finally {
             setLoading(false);
         }
@@ -76,7 +76,7 @@ function LoginPage({ onLogin }) {
                 </form>
 
                 <p className="login-hint">
-                    Default: admin / password123
+                    Default: em01 / password
                 </p>
             </div>
         </div>

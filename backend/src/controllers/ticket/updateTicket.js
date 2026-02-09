@@ -10,7 +10,7 @@ const updateTicket = async (req, res) => {
         try {
             await connection.beginTransaction();
 
-            // Check if ticket exists and get current data
+
             const [rows] = await connection.execute(
                 'SELECT id, name, phone, email, company, subject, question, status, memo, signature FROM tickets WHERE id = ?',
                 [id]
@@ -21,15 +21,14 @@ const updateTicket = async (req, res) => {
             }
             const currentTicket = rows[0];
 
-            // Build dynamic update query
+
             const updates = [];
             const params = [];
 
             const changes = [];
 
-            // Helper to check and record changes
+
             const checkChange = (field, newValue, oldValue) => {
-                // strict equality check, but handle undefined/null
                 if (newValue !== undefined && newValue !== oldValue) {
                     updates.push(`${field} = ?`);
                     params.push(newValue);
@@ -47,12 +46,10 @@ const updateTicket = async (req, res) => {
             checkChange('subject', subject, currentTicket.subject);
             checkChange('question', question, currentTicket.question);
             checkChange('memo', memo, currentTicket.memo);
-            // signature in tickets table usually refers to the creator or last editor, 
-            // but here it seems we are updating the ticket's signature field itself?
-            // If signature is passed in body as a field to update:
+
             checkChange('signature', signature, currentTicket.signature);
 
-            // Status special handling (validation)
+
             if (status) {
                 const validStatuses = ['pending', 'accepted', 'resolved', 'rejected'];
                 if (!validStatuses.includes(status)) {
@@ -71,15 +68,8 @@ const updateTicket = async (req, res) => {
                 const query = `UPDATE tickets SET ${updates.join(', ')} WHERE id = ?`;
                 await connection.execute(query, params);
 
-                // Record history
-                const details = changes.join(', ');
 
-                // For history signature, we use the signature provided in the request (the actor)
-                // OR we might want to distinguish between "updating the signature field" vs "who is performing the action"
-                // The current code used `signature` from body as the entries `signature`.
-                // If `signature` is also a field being updated, it's ambiguous. 
-                // However, usually `signature` in update request = "Who is doing this".
-                // I will stick to using `signature` request param as the History Actor.
+                const details = changes.join(', ');
 
                 const actionBy = req.body.signature || 'System/Unknown';
                 await connection.execute(
@@ -97,10 +87,6 @@ const updateTicket = async (req, res) => {
             await connection.rollback();
             throw err;
         } finally {
-            // connection.release() is called in the if/else blocks or before return if needed, 
-            // but here we used transaction so we MUST release. 
-            // Ideally we structure it to always release in finally.
-            // Releasing here if not already released (pool.getConnection() returns a connection that needs release)
             if (connection) connection.release();
         }
 
