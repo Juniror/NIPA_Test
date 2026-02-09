@@ -13,39 +13,25 @@ const dbConfig = {
 };
 
 async function initDB() {
-    console.log(`Attempting Init DB connection to ${dbConfig.host}...`);
+    console.log('[InitDB] Waiting 20s for MySQL to initialize...');
+    await new Promise(res => setTimeout(res, 20000));
 
-    try {
-        let connection;
-        connection = await mysql.createConnection(dbConfig);
+    const connection = await mysql.createConnection(dbConfig);
 
-        console.log('Successfully connected to database for initialization.');
+    await connection.execute(ticketsTableQuery);
 
-        // db table tickets
-        await connection.execute(ticketsTableQuery);
-        console.log('Database table "tickets" check/creation successful.');
+    await connection.execute(historyTableQuery);
 
-        // db table history
-        await connection.execute(historyTableQuery);
-        console.log('Database table "history" check/creation successful.');
+    await connection.execute(employeesTableQuery);
 
-        // db table employees
-        await connection.execute(employeesTableQuery);
-        console.log('Database table "employees" check/creation successful.');
+    const insertEm01Query = `
+        INSERT IGNORE INTO employees (mail, username, password)
+        VALUES (?, ?, ?)
+    `;
+    await connection.execute(insertEm01Query, ['em01@gmail.com', 'em01', 'password']);
 
-        // dashboard default user
-        const insertEm01Query = `
-            INSERT IGNORE INTO employees (mail, username, password)
-            VALUES (?, ?, ?)
-        `;
-
-        await connection.execute(insertEm01Query, ['em01@gmail.com', 'em01', 'password']);
-        console.log('Checked/Created default user: em01 / password');
-
-        await connection.end();
-    } catch (error) {
-        console.error('Error initializing database:', error.message);
-    }
+    await connection.end();
+    console.log('[InitDB] Database ready\n');
 }
 
 module.exports = initDB;
