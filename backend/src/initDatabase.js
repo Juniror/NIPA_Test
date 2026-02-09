@@ -13,8 +13,8 @@ const dbConfig = {
 };
 
 async function initDB() {
-    console.log('[InitDB] Waiting 20s for MySQL to initialize...');
-    await new Promise(res => setTimeout(res, 20000));
+    console.log("wait 25 sec delay for database initialize docker")
+    await new Promise(res => setTimeout(res, 25000));
 
     const connection = await mysql.createConnection(dbConfig);
 

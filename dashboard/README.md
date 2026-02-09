@@ -1,12 +1,14 @@
 # Dashboard Documentation
 
 Dashboard สำหรับ Admin ต้อง login ก่อนถึงจะสามารถใช้งานได้
+ในการเพิ่ม employee ต้องเพิ่มแบบ manual ผ่าน docker
 
 ## Feature
 
-- Kanban Board
-- Login
-- History
+- Login จำเป็นต้อง login ก่อนถึงจะสามารถใช้งานได้ และจะแสดงผู้ใช้อยู่ซ้ายบน
+- History เช๋คดูประวัติว่าใครทำอะไรบ้าง ตั๋วไหนถูกเปลี่ยนสถานะ
+- Ticket แสดงรายการตั๋วแบบ Kanban Board
+- Memo เชฟปัญหาหากว่ายังไม่สามารถจบปัญหาได้ จำเป็นต้องกดเชฟถึงจะเชฟข้อมูล
 
 ## Usage
 
