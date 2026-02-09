@@ -1,48 +1,23 @@
 const mysql = require('mysql2/promise');
-const path = require('path');
 const ticketsTableQuery = require('./dbtable/tickets');
 const historyTableQuery = require('./dbtable/history');
 const employeesTableQuery = require('./dbtable/employees');
 
 
-if (!process.env.DB_HOST) {
-    require('dotenv').config({ path: path.join(__dirname, '../.env') });
-}
-
-
-const getDbConfig = () => {
-    let host = process.env.DB_HOST;
-
-    if (host === 'db') {
-    }
-    return {
-        host: host,
-        user: process.env.DB_USER,
-        password: process.env.DB_PASSWORD,
-        database: process.env.DB_NAME,
-        port: 3306
-    };
+const dbConfig = {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.MYSQL_ROOT_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
+    port: 3306
 };
 
-
-
 async function initDB() {
-    let config = getDbConfig();
-    console.log(`Attempting Init DB connection to ${config.host}...`);
+    console.log(`Attempting Init DB connection to ${dbConfig.host}...`);
 
     try {
         let connection;
-        try {
-            connection = await mysql.createConnection(config);
-        } catch (err) {
-            if (config.host === 'db') {
-                console.log("Connection to 'db' failed, trying '127.0.0.1' (assuming local dev against docker)...");
-                config.host = '127.0.0.1';
-                connection = await mysql.createConnection(config);
-            } else {
-                throw err;
-            }
-        }
+        connection = await mysql.createConnection(dbConfig);
 
         console.log('Successfully connected to database for initialization.');
 
@@ -73,8 +48,4 @@ async function initDB() {
     }
 }
 
-module.exports = { initDB };
-
-if (require.main === module) {
-    initDB();
-}
+module.exports = initDB;

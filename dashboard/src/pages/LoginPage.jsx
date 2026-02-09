@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../css/LoginModal.css';
-import InfoGroup from '../components/util/InfoGroup';
-import CustomInput from '../components/util/CustomInput';
+import InfoGroup from '../components/InfoGroup';
+import CustomInput from '../components/CustomInput';
 
 function LoginPage({ onLogin }) {
     const [username, setUsername] = useState('');

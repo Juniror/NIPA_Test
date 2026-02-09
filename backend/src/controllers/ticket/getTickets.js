@@ -7,7 +7,6 @@ const getTickets = async (req, res) => {
         const params = [];
         const conditions = [];
 
-        // Filtering
         if (status) {
             conditions.push('status = ?');
             params.push(status);
@@ -17,7 +16,6 @@ const getTickets = async (req, res) => {
             query += ' WHERE ' + conditions.join(' AND ');
         }
 
-        // Sorting
         if (sort === 'latest_update') {
             query += ' ORDER BY updated_at DESC';
         } else if (sort === 'created_at') {

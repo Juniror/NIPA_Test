@@ -8,9 +8,8 @@
   background-color: #ffffff;
 
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
 
-  /* Theme Colors */
+  /* ล็อคสีไม่เปลี่ยนตามธีม */
   --color-pending: #ffd200;
   --color-accepted: #3498db;
   --color-resolved: #2ecc71;
@@ -63,5 +62,5 @@ button:hover {
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px ;
 }

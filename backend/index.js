@@ -1,7 +1,7 @@
-require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
-const { initDB } = require('./src/initDatabase');
+const initDB = require('./src/initDatabase');
 
 const app = express();
 const port = process.env.PORT;

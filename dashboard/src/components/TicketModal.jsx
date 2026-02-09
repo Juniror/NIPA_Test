@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import '../css/TicketModal.css';
-import InfoGroup from './util/InfoGroup';
+import InfoGroup from './InfoGroup';
 
-function TicketModal({ ticket, user, onClose, onUpdateTicket, columns }) {
+function TicketModal({ ticket, onClose, onUpdateTicket, columns }) {
     const [memo, setMemo] = useState('');
 
     useEffect(() => {

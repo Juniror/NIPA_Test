@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../css/DashboardLayout.css';
+import '../css/DashboardLayout.css';
 
 function InfoGroup({ label, children, className = '', fullWidth = false }) {
     return (

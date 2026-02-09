@@ -56,9 +56,9 @@
 #### GET `/api/tickets`
 ดึงรายการตั๋ว
 
-*   **Query Parameters** (Optional):
-    *   `status`: Filter by status (`pending`, `accepted`, `resolved`, `rejected`).
-    *   `sort`: Sort options (`latest_update`, `created_at`, `status`, `none`).
+*   **Query Parameters**:
+    *   `status`: เรียงโดย status (`pending`, `accepted`, `resolved`, `rejected`).
+    *   `sort`: เรียงโดยค่าต่างๆ (`latest_update`, `created_at`, `none`).
 
 *   **Example URL (Simple)**: `/api/tickets`
 *   **Example URL (Filtered & Sorted)**: `/api/tickets?status=pending&sort=latest_update`
