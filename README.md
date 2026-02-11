@@ -35,6 +35,7 @@
 ```bash
 docker compose up -d
 ```
+รอประมาณ 30 วิ ถึง 1 นาที
 
 ### 2. Access
 
