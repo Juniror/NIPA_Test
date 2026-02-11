@@ -15,6 +15,11 @@ const authRoutes = require('./src/routes/auth');
 app.use('/api/tickets', ticketRoutes);
 app.use('/api/auth', authRoutes);
 
+app.get('/', (req, res) => {
+  res.send('<h1>Hello from the backend - API is working!</h1>');
+});
+
+
 const startServer = async () => {
   try {
     await initDB();
