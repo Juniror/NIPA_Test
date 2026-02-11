@@ -6,17 +6,17 @@
 
 หลักๆจะมี 3 ส่วน โดยทุกส่วนรันผ่าน docker
 
-1.  **Backend** (`/backend`) 
+1.  **Backend**
     *   **Technology**: Node.js, Express, MySQL.
     *   **Port**: 3000 (API), 3306 (Database).
     *   **Description**: จัดการ API, authentication, และ database operations.
 
-2.  **Frontend** (`/frontend`)
+2.  **Frontend**
     *   **Technology**: React, Vite.
     *   **Port**: 3001 (UI).
     *   **Description**: หน้าเว็บสำหรับให้ลูกค้ากรอกข้อมูล
 
-3.  **Dashboard** (`/dashboard`)
+3.  **Dashboard**
     *   **Technology**: React, Vite.
     *   **Port**: 3002 (UI).
     *   **Description**: หน้าเว็บสำหรับให้แอดมินจัดการข้อมูล

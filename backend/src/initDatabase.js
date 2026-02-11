@@ -31,7 +31,7 @@ async function initDB() {
     await connection.execute(insertEm01Query, ['em01@gmail.com', 'em01', 'password']);
 
     await connection.end();
-    console.log('[InitDB] Database ready\n');
+    console.log('Database ready\n');
 }
 
 module.exports = initDB;
