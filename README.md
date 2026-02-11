@@ -30,13 +30,14 @@
 - ./frontend/.env.example → ./frontend/.env
 - ./dashboard/.env.example → ./dashboard/.env
 
-### 2. Run Everything
+### 2. Run
 
 ```bash
 docker compose up -d
 ```
+รอประมาณ 30 วิ ถึง 1 นาที
 
-### 2. Access the Apps
+### 2. Access
 
 *   **Frontend (Customer)**: [http://localhost:3001](http://localhost:3001)
 *   **Dashboard (Admin)**: [http://localhost:3002](http://localhost:3002)
