@@ -21,8 +21,6 @@ function Navbar({ onHomeClick, isSubmitted }) {
   }, []);
 
   const handleHomeClick = (e) => {
-    // Only prevent default if onHomeClick is provided (for single page app behavior)
-    // Otherwise let it navigate normally
     if (onHomeClick) {
       e.preventDefault();
       onHomeClick();
@@ -36,12 +34,12 @@ function Navbar({ onHomeClick, isSubmitted }) {
       <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <ul className="menu">
           <li>
-            <a href="https://jobs.nipa.co.th/" onClick={handleHomeClick}>
+            <a href="#" onClick={handleHomeClick}>
               <img src={nipalogo} alt="nipa" />
             </a>
           </li>
-          <li><a href="https://jobs.nipa.co.th/" onClick={handleHomeClick}>Home</a></li>
-          <li><a href="https://jobs.nipa.co.th/jobs">Jobs</a></li>
+          <li><a href="#" onClick={handleHomeClick}>Home</a></li>
+          <li>Jobs</li>
           <li style={{ color: isSubmitted ? 'gray' : 'black', cursor: isSubmitted ? 'default' : 'pointer' }}>Contact Us</li>
         </ul>
         <div className='navbutton'>
