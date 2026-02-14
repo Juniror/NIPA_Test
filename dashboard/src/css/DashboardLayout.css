@@ -34,11 +34,32 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     font-size: 0.95rem;
     border: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.user-welcome:hover {
+    background: #f8f8f8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
 }
 
 .user-welcome .user-icon-small {
     color: #e9355c;
     font-size: 1rem;
+}
+
+.user-welcome .logout-icon {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    margin-left: 4px;
+}
+
+.user-welcome:hover .logout-icon {
+    opacity: 1;
 }
 
 .dashboard-header h1 {

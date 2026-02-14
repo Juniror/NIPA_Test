@@ -14,7 +14,10 @@ function App() {
     navigate('/dashboard');
   };
 
-
+  const handleLogout = () => {
+    setUser(null);
+    navigate('/login');
+  };
 
   return (
     <Routes>
@@ -22,7 +25,7 @@ function App() {
         user ? <Navigate to="/dashboard" replace /> : <LoginPage onLogin={handleLogin} />
       } />
 
-      <Route path="/dashboard" element={<TicketList user={user} />} />
+      <Route path="/dashboard" element={<TicketList user={user} onLogout={handleLogout} />} />
 
       <Route path="*" element={<Navigate to={user ? "/dashboard" : "/login"} replace />} />
     </Routes>

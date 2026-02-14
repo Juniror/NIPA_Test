@@ -7,7 +7,7 @@ import KanbanColumn from '../components/KanbanColumn';
 import TicketHeader from '../components/TicketHeader';
 import { useTickets } from '../hooks/useTickets';
 
-function TicketPage({ user }) {
+function TicketPage({ user, onLogout }) {
     const { tickets, loading, sortBy, setSortBy, fetchTickets, updateTicket } = useTickets(user);
     const [selectedTicket, setSelectedTicket] = useState(null);
     const [showHistory, setShowHistory] = useState(false);
@@ -35,6 +35,7 @@ function TicketPage({ user }) {
                 user={user}
                 onShowHistory={() => setShowHistory(true)}
                 onRefresh={handleManualRefresh}
+                onLogout={onLogout}
                 loading={loading}
                 sortBy={sortBy}
                 onSortChange={setSortBy}

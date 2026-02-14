@@ -1,12 +1,13 @@
-import { FaUser, FaHistory, FaSync } from 'react-icons/fa';
+import { FaUser, FaHistory, FaSync, FaSignOutAlt } from 'react-icons/fa';
 
-function TicketHeader({ user, onShowHistory, onRefresh, loading, sortBy, onSortChange }) {
+function TicketHeader({ user, onShowHistory, onRefresh, onLogout, loading, sortBy, onSortChange }) {
     return (
         <header className="dashboard-header">
-            <div className="user-welcome">
+            <button className="user-welcome" onClick={onLogout} title="Click to logout">
                 <FaUser className="user-icon-small" />
                 <span>{user?.username || 'Admin'}</span>
-            </div>
+                <FaSignOutAlt className="logout-icon" />
+            </button>
             <h1>Admin Dashboard - Support Tickets</h1>
             <div className="cleanup-controls">
                 <button className="history-btn" onClick={onShowHistory} title="View History">
