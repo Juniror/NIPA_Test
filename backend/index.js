@@ -6,11 +6,11 @@ const initDB = require('./src/initDatabase');
 const app = express();
 const port = process.env.PORT;
 
-app.use(cors());
-app.use(express.json());
-
 const ticketRoutes = require('./src/routes/tickets');
 const authRoutes = require('./src/routes/auth');
+
+app.use(cors());
+app.use(express.json());
 
 app.use('/api/tickets', ticketRoutes);
 app.use('/api/auth', authRoutes);

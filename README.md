@@ -39,7 +39,7 @@ docker compose up -d
 
 ### 2. Access
 
-*   **Frontend (Customer)**: [http://localhost:3001](http://localhost:3001)
+*   **Frontend (Client)**: [http://localhost:3001](http://localhost:3001)
 *   **Dashboard (Admin)**: [http://localhost:3002](http://localhost:3002)
 *   **Backend API**: [http://localhost:3000](http://localhost:3000)
 
