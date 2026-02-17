@@ -5,7 +5,7 @@ function TicketHeader({ user, onShowHistory, onRefresh, onLogout, loading, sortB
         <header className="dashboard-header">
             <button className="user-welcome" onClick={onLogout} title="Click to logout">
                 <FaUser className="user-icon-small" />
-                <span>{user?.username || 'Admin'}</span>
+                <span>{user?.username || 'อันนี้ทะลุ ช่องว่าง'}</span>
                 <FaSignOutAlt className="logout-icon" />
             </button>
             <h1>Admin Dashboard - Support Tickets</h1>

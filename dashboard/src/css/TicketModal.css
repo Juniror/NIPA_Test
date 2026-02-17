@@ -6,8 +6,6 @@
     margin-bottom: 20px;
     padding-bottom: 10px;
     padding-right: 40px;
-    /* Space for close button */
-    /* border-bottom: 1px solid #eee; REMOVED */
     margin-top: 10px;
 }
 
@@ -17,8 +15,6 @@
     font-size: 1.5rem;
 }
 
-/* Close button moved to DashboardLayout.css */
-
 .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -26,19 +22,14 @@
     margin-bottom: 20px;
 }
 
-/* Info Group Styles */
-
 .info-group {
     margin-bottom: 15px;
-    /* Default spacing */
 }
 
-/* For grid items, rely on grid-gap if desired */
 .info-grid .info-group {
     margin-bottom: 0;
 }
 
-/* Ensure labels are block and bold */
 .info-group label {
     display: block;
     font-weight: 600;
@@ -69,7 +60,6 @@
     background: #f9f9f9;
     padding: 15px;
     border-radius: 10px;
-    /* border: 1px solid #eee; REMOVED */
     min-height: 80px;
 }
 
@@ -146,7 +136,6 @@
     width: 100%;
     min-height: 80px;
     padding: 10px;
-    /* border: 1px solid #ddd; REMOVED/CHANGED */
     border: none;
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -165,8 +154,6 @@
     cursor: pointer;
     font-size: 0.9rem;
     transition: background 0.2s;
-
-    /* Centering and Margin */
     display: block;
     margin: 40px auto 0;
 }

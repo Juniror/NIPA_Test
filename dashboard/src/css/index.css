@@ -9,7 +9,6 @@
 
   font-synthesis: none;
 
-  /* ล็อคสีไม่เปลี่ยนตามธีม */
   --color-pending: #ffd200;
   --color-accepted: #3498db;
   --color-resolved: #2ecc71;
@@ -36,7 +35,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #f4f7f6;
-  /* Matching DashboardLayout */
 }
 
 h1 {
@@ -62,5 +60,5 @@ button:hover {
 
 button:focus,
 button:focus-visible {
-  outline: 4px ;
+  outline: 4px;
 }

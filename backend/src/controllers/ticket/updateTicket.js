@@ -24,7 +24,6 @@ const updateTicket = async (req, res) => {
 
             const updates = [];
             const params = [];
-
             const changes = [];
 
 
@@ -38,7 +37,6 @@ const updateTicket = async (req, res) => {
                 return false;
             };
 
-            // Check each field
             checkChange('name', name, currentTicket.name);
             checkChange('phone', phone, currentTicket.phone);
             checkChange('email', email, currentTicket.email);

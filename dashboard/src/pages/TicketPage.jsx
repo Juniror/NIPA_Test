@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import '../css/DashboardLayout.css';
-import '../css/KanbanBoard.css';
 import TicketModal from '../components/TicketModal';
 import HistoryModal from '../components/HistoryModal';
 import KanbanColumn from '../components/KanbanColumn';
 import TicketHeader from '../components/TicketHeader';
 import { useTickets } from '../hooks/useTickets';
+import '../css/DashboardLayout.css';
+import '../css/KanbanBoard.css';
 
 function TicketPage({ user, onLogout }) {
     const { tickets, loading, sortBy, setSortBy, fetchTickets, updateTicket } = useTickets(user);
