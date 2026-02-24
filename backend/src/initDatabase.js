@@ -1,37 +1,25 @@
-const mysql = require('mysql2/promise');
+const pool = require('./config/db');
 const ticketsTableQuery = require('./dbtable/tickets');
 const historyTableQuery = require('./dbtable/history');
 const employeesTableQuery = require('./dbtable/employees');
-
-
-const dbConfig = {
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.MYSQL_ROOT_PASSWORD,
-    database: process.env.MYSQL_DATABASE,
-    port: 3306
-};
+const addedDefaultUserQuery = require('./dbtable/addedDefaultUser');
 
 async function initDB() {
     console.log("wait 25 sec delay for database initialize docker")
     await new Promise(res => setTimeout(res, 25000));
 
-    const connection = await mysql.createConnection(dbConfig);
+    const connection = await pool.getConnection();
 
-    await connection.execute(ticketsTableQuery);
+    try {
+        await connection.execute(ticketsTableQuery);
+        await connection.execute(historyTableQuery);
+        await connection.execute(employeesTableQuery);
+        await connection.execute(addedDefaultUserQuery);
 
-    await connection.execute(historyTableQuery);
-
-    await connection.execute(employeesTableQuery);
-
-    const insertEm01Query = `
-        INSERT IGNORE INTO employees (mail, username, password)
-        VALUES (?, ?, ?)
-    `;
-    await connection.execute(insertEm01Query, ['em01@gmail.com', 'em01', 'password']);
-
-    await connection.end();
-    console.log('Database ready\n');
+        console.log('Database ready\n');
+    } finally {
+        connection.release();
+    }
 }
 
 module.exports = initDB;

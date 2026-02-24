@@ -1,11 +1,44 @@
-const createTicket = require('./ticket/createTicket');
-const getTickets = require('./ticket/getTickets');
-const updateTicket = require('./ticket/updateTicket');
-const getHistory = require('./ticket/getHistory');
+const ticketService = require('../services/ticketService');
+const historyService = require('../services/historyService');
+const handleError = require('../utils/handleError');
 
-module.exports = {
-    createTicket,
-    getTickets,
-    updateTicket,
-    getHistory
+const ticketController = {
+
+    async createTicket(req, res) {
+        try {
+            const result = await ticketService.createTicket(req.body);
+            res.status(201).json(result);
+        } catch (error) {
+            handleError(res, error, 'creating ticket');
+        }
+    },
+
+    async getTickets(req, res) {
+        try {
+            const tickets = await ticketService.getTickets(req.query);
+            res.json(tickets);
+        } catch (error) {
+            handleError(res, error, 'fetching tickets');
+        }
+    },
+
+    async getHistory(req, res) {
+        try {
+            const history = await historyService.getHistory();
+            res.json(history);
+        } catch (error) {
+            handleError(res, error, 'fetching history');
+        }
+    },
+
+    async updateTicket(req, res) {
+        try {
+            const result = await ticketService.updateTicket(req.params.id, req.body);
+            res.json(result);
+        } catch (error) {
+            handleError(res, error, 'updating ticket');
+        }
+    }
 };
+
+module.exports = ticketController;
