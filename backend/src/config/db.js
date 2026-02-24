@@ -6,7 +6,6 @@ const dbConfig = {
     database: process.env.MYSQL_DATABASE
 };
 
-// Create a connection pool instead of single connection for better performance
 const pool = mysql.createPool(dbConfig);
 
 module.exports = pool;
