@@ -16,7 +16,6 @@
 *   **Response**:
     ```json
     {
-      "success": true,
       "message": "Login successful",
       "user": {
         "id": 1,
