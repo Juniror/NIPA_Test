@@ -1,6 +1,6 @@
-const ticketService = require('../services/ticketService');
-const historyService = require('../services/historyService');
-const handleError = require('../utils/handleError');
+import ticketService from '../services/ticketService.js';
+import historyService from '../services/historyService.js';
+import handleError from '../utils/handleError.js';
 
 const ticketController = {
 
@@ -41,4 +41,4 @@ const ticketController = {
     }
 };
 
-module.exports = ticketController;
+export default ticketController;

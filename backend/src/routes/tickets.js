@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const ticketController = require('../controllers/ticketController');
+import ticketController from '../controllers/ticketController.js';
 
 router.post('/', ticketController.createTicket);
 
@@ -10,4 +10,4 @@ router.get('/history', ticketController.getHistory);
 
 router.put('/:id', ticketController.updateTicket);
 
-module.exports = router;
+export default router;

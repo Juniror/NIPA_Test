@@ -1,4 +1,4 @@
-const historyRepository = require('../repository/historyRepository');
+import historyRepository from '../repository/historyRepository.js';
 
 const historyService = {
 
@@ -7,4 +7,4 @@ const historyService = {
     }
 };
 
-module.exports = historyService;
+export default historyService;

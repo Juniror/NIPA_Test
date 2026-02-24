@@ -1,5 +1,5 @@
-const authService = require('../services/authService');
-const handleError = require('../utils/handleError');
+import authService from '../services/authService.js';
+import handleError from '../utils/handleError.js';
 
 const authController = {
 
@@ -14,4 +14,4 @@ const authController = {
     }
 };
 
-module.exports = authController;
+export default authController;

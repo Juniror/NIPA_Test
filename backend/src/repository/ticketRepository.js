@@ -1,4 +1,4 @@
-const pool = require('../config/db');
+import pool from '../config/db.js';
 
 const ticketRepository = {
 
@@ -58,4 +58,4 @@ const ticketRepository = {
     }
 };
 
-module.exports = ticketRepository;
+export default ticketRepository;

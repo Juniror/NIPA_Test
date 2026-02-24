@@ -3,4 +3,4 @@ const addedDefaultUserQuery = `
     VALUES ('em01@gmail.com', 'em01', 'password')
 `;
 
-module.exports = addedDefaultUserQuery;
+export default addedDefaultUserQuery;

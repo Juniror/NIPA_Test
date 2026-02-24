@@ -1,7 +1,7 @@
-const pool = require('../config/db');
-const AppError = require('../utils/AppError');
-const ticketRepository = require('../repository/ticketRepository');
-const historyRepository = require('../repository/historyRepository');
+import pool from '../config/db.js';
+import AppError from '../utils/AppError.js';
+import ticketRepository from '../repository/ticketRepository.js';
+import historyRepository from '../repository/historyRepository.js';
 
 const VALID_STATUSES = ['pending', 'accepted', 'resolved', 'rejected'];
 
@@ -110,4 +110,4 @@ const ticketService = {
     }
 };
 
-module.exports = ticketService;
+export default ticketService;

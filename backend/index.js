@@ -1,14 +1,14 @@
 
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const initDB = require('./src/initDatabase');
+import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
+import initDB from './src/initDatabase.js';
 
 const app = express();
 const port = process.env.PORT;
 
-const ticketRoutes = require('./src/routes/tickets');
-const authRoutes = require('./src/routes/auth');
+import ticketRoutes from './src/routes/tickets.js';
+import authRoutes from './src/routes/auth.js';
 
 app.use(cors());
 app.use(express.json());

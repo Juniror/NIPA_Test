@@ -1,5 +1,5 @@
-const AppError = require('../utils/AppError');
-const employeeRepository = require('../repository/employeeRepository');
+import AppError from '../utils/AppError.js';
+import employeeRepository from '../repository/employeeRepository.js';
 
 const authService = {
 
@@ -25,4 +25,4 @@ const authService = {
     }
 };
 
-module.exports = authService;
+export default authService;

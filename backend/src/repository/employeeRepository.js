@@ -1,4 +1,4 @@
-const pool = require('../config/db');
+import pool from '../config/db.js';
 
 const employeeRepository = {
 
@@ -11,4 +11,4 @@ const employeeRepository = {
     }
 };
 
-module.exports = employeeRepository;
+export default employeeRepository;

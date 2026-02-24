@@ -15,4 +15,4 @@ const createTableQuery = `
     )
 `;
 
-module.exports = createTableQuery;
+export default createTableQuery;

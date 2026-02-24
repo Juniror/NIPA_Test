@@ -1,8 +1,8 @@
-const pool = require('./config/db');
-const ticketsTableQuery = require('./dbtable/tickets');
-const historyTableQuery = require('./dbtable/history');
-const employeesTableQuery = require('./dbtable/employees');
-const addedDefaultUserQuery = require('./dbtable/addedDefaultUser');
+import pool from './config/db.js';
+import ticketsTableQuery from './dbtable/tickets.js';
+import historyTableQuery from './dbtable/history.js';
+import employeesTableQuery from './dbtable/employees.js';
+import addedDefaultUserQuery from './dbtable/addedDefaultUser.js';
 
 async function initDB() {
     console.log("wait 25 sec delay for database initialize docker")
@@ -22,4 +22,4 @@ async function initDB() {
     }
 }
 
-module.exports = initDB;
+export default initDB;

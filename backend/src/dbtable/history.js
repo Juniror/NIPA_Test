@@ -9,4 +9,4 @@ const createHistoryTableQuery = `
     )
 `;
 
-module.exports = createHistoryTableQuery;
+export default createHistoryTableQuery;
