@@ -1,8 +1,8 @@
 import pool from './config/db.js';
-import ticketsTableQuery from './dbtable/tickets.js';
-import historyTableQuery from './dbtable/history.js';
-import employeesTableQuery from './dbtable/employees.js';
-import addedDefaultUserQuery from './dbtable/addedDefaultUser.js';
+import ticketsTableQuery from './repository/tables/tickets.js';
+import historyTableQuery from './repository/tables/history.js';
+import employeesTableQuery from './repository/tables/employees.js';
+import addedDefaultUserQuery from './repository/tables/addedDefaultUser.js';
 
 async function initDB() {
     console.log("wait 25 sec delay for database initialize docker")

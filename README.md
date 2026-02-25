@@ -37,7 +37,7 @@ docker compose up -d
 ```
 รอประมาณ 30 วิ ถึง 1 นาที
 
-### 2. Access
+### 3. Access
 
 *   **Frontend (Client)**: [http://localhost:3001](http://localhost:3001)
 *   **Dashboard (Admin)**: [http://localhost:3002](http://localhost:3002)
